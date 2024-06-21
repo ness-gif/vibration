@@ -8,7 +8,7 @@
         :root {
             overflow: hidden;
         }
-        
+
         body {
             margin: 0;
             height: 100svh;
@@ -18,14 +18,16 @@
     </style>
 </head>
 <body>
-    Click this page to vibrate your device!
+    <div onclick="vibrate()">Click this page to vibrate your device!</div>
     <script>
-        document.addEventListener('touchstart', () => {
+        document.addEventListener('touchstart', vibrate);
+        document.addEventListener('touchmove', vibrate);
+        document.addEventListener('touchend', vibrate);
+        document.addEventListener('click', vibrate);
+        function vibrate() {
+            alert("Let's vibrate!");
             window.navigator.vibrate(10000);
-        });
-        document.addEventListener('click', () => {
-            window.navigator.vibrate(10000);
-        });
+        }
     </script>
 </body>
 </html>
