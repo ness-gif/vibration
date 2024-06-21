@@ -7,7 +7,7 @@
     <style>
         body {
             margin: 0;
-            height: 100vh;
+            height: 100svh;
             display: grid;
             place-items: center;
         }
@@ -16,6 +16,9 @@
 <body>
     Click this page to vibrate your device!
     <script>
+        document.addEventListener('touchstart', () => {
+            window.navigator.vibrate(10000);
+        });
         document.addEventListener('click', () => {
             window.navigator.vibrate(10000);
         });
