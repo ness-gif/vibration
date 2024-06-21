@@ -25,8 +25,9 @@
         document.addEventListener('touchend', vibrate);
         document.addEventListener('click', vibrate);
         function vibrate() {
-            alert("Let's vibrate!");
-            window.navigator.vibrate(10000);
+            window.navigator.vibrate([
+                100, 30, 100, 30, 100, 30, 200, 30, 200, 30, 200, 30, 100, 30, 100, 30, 100,
+            ]);
         }
     </script>
 </body>
